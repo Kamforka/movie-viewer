@@ -25,6 +25,7 @@ before_script:
   - npm install -g angular-cli
 
 script:
+  - cd Kamforka/movie-viewer
   - npm install
   - ng test --single-run
   - ng build --prod

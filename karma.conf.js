@@ -40,9 +40,14 @@ module.exports = function (config) {
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: [
-      // 'Chrome',
-      'Firefox',
+      'Chrome',
     ],
-    singleRun: false
+    singleRun: false,
+    customLaunchers: {
+      Chrome_travis_ci: {
+        base: 'Chrome',
+        flags: ['--no-sandbox'],
+      }
+    }
   });
 };

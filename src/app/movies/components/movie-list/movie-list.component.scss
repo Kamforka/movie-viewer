@@ -1,0 +1,11 @@
+:host {
+  overflow: auto;
+}
+
+
+a.list-group-item {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+}

@@ -1,0 +1,10 @@
+<div class="movie-list">
+    <div class="list-group">
+      <a class="list-group-item"
+         [ngClass]="{active: selectedMovie === movie}"
+         (click)="onSelectMovie(movie)"
+         *ngFor="let movie of movies">
+         {{ movie.title }}
+      </a>
+  </div>
+</div>

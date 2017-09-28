@@ -5,7 +5,6 @@ import { FormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { MoviesEffects } from './store/movies.effects';
 
-import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { MoviesRoutingModule } from './movies-routing.module';
 import { MovieBrowserComponent } from './components/movie-browser/movie-browser.component';
@@ -20,7 +19,6 @@ import { MovieDetailComponent } from './components/movie-detail/movie-detail.com
   imports: [
     CommonModule,
     EffectsModule.run(MoviesEffects),
-    FlexLayoutModule,
     FormsModule,
     MoviesRoutingModule,
     NgbPaginationModule,

@@ -1,0 +1,11 @@
+<ng-template [ngIf]="movie">
+  <div class="movie-info d-flex flex-row">
+    <div class="poster">
+      <img [src]="'http://image.tmdb.org/t/p/w185/' + movie.posterPath">
+    </div>
+    <div class="details">
+
+    <h1>{{ movie.title }}</h1>
+    {{ movie.overview }}</div>
+  </div>
+</ng-template>

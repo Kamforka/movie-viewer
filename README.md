@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/Kamforka/movie-viewer.svg?style=shield)](https://circleci.com/gh/Kamforka/movie-viewer)
+
 # MovieBrowser
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.

@@ -1,0 +1,46 @@
+<!-- ngbTypeahead result template -->
+<ng-template #rt let-r="result" let-t="term">
+  {{ r.title }}
+</ng-template>
+
+<div class="d-flex flex-column container-fluid">
+
+  <section class="header d-flex flex-row justify-content-between">
+    <h2>Movie viewer</h2>
+
+    <div class="search">
+      <label for="movie-search">Search for a movie:</label>
+      <input
+        id="movie-search"
+        type="text"
+        class="form-control"
+        [ngbTypeahead]="search"
+        [inputFormatter]="formatter"
+        [resultTemplate]="rt"
+        (selectItem)="onSearchMovie($event)"/>
+    </div>
+  </section>
+
+  <section class="content d-flex flex-row mb-10">
+    <app-movie-list
+      class="col-3 pl-0"
+      [movies]="movies$ | async"
+      [selectedMovie]="selectedMovie$ | async"
+      (selectMovie)="onSelectMovie($event)"></app-movie-list>
+    <app-movie-detail
+      class="col-7"
+      [movie]="selectedMovie$ | async"></app-movie-detail>
+  </section>
+
+  <section class="footer d-flex flex-row justify-content-center">
+        <ngb-pagination
+          [pageSize]="pageSize"
+          [collectionSize]="(totalPages$ | async) > 1000 ? 1000 * pageSize: (totalResults$ | async)"
+          [page]="selectedPage$ | async"
+          [maxSize]="5"
+          [rotate]="true"
+          [ellipses]="false"
+          [boundaryLinks]="true"
+          (pageChange)="onPageChange($event)"></ngb-pagination>
+  </section>
+</div>

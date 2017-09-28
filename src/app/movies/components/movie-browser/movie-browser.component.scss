@@ -1,0 +1,36 @@
+.container-fluid {
+  height: 100%;
+}
+
+.header {
+  height: 15%;
+}
+
+.content {
+  height: 70%;
+}
+
+.footer {
+  height: 15%;
+}
+
+.movie-list {
+  overflow: auto;
+}
+
+a.list-group-item {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+  background: #ddd;
+  opacity: 0.5;
+
+  transition: 150ms;
+}
+
+a.list-group-item.active {
+  opacity: 1;
+  border-color: #eee;
+
+}

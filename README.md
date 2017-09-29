@@ -8,7 +8,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Live demo
 
-Take a look at the live demo at: [DEMO](https://movie-viewer-e727f.firebaseapp.com/browse)
+Take a look at the live demo at: [DEMO](https://movie-viewer-e727f.firebaseapp.com)
 
 ## Features
 

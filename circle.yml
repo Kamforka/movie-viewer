@@ -13,11 +13,11 @@ dependencies:
 test:
   override:
     - ng test --single-run
-    - ng build --prod
 
 deployment:
   production:
     branch: master
     commands:
+      - ng build --prod
       - npm install -g firebase-tools
       - firebase deploy --token=$FIREBASE_TOKEN --non-interactive

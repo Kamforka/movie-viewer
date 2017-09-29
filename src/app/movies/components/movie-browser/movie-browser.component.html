@@ -22,14 +22,25 @@
   </section>
 
   <section class="content d-flex flex-row mb-10">
-    <app-movie-list
-      class="col-3 pl-0"
-      [movies]="movies$ | async"
-      [selectedMovie]="selectedMovie$ | async"
-      (selectMovie)="onSelectMovie($event)"></app-movie-list>
-    <app-movie-detail
-      class="col-7"
-      [movie]="selectedMovie$ | async"></app-movie-detail>
+    <ng-template [ngIf]="error$ | async">
+      <div class="col-12 d-flex flex-column justify-content-center align-items-center">
+        An error occured while tried to fetch movies. We are working on the issue!
+        Please visit back a bit later!
+      </div>
+    </ng-template>
+    <ng-template [ngIf]="loading$ | async">
+      <div class="col-12 d-flex flex-column justify-content-center">Loading...</div>
+    </ng-template>
+    <ng-template [ngIf]="loaded$ |async">
+      <app-movie-list
+        class="col-3 pl-0"
+        [movies]="movies$ | async"
+        [selectedMovie]="selectedMovie$ | async"
+        (selectMovie)="onSelectMovie($event)"></app-movie-list>
+      <app-movie-detail
+        class="col-7"
+        [movie]="selectedMovie$ | async"></app-movie-detail>
+    </ng-template>
   </section>
 
   <section class="footer d-flex flex-row justify-content-center">

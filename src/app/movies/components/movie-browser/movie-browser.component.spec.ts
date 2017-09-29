@@ -63,7 +63,6 @@ describe('MovieBrowserComponent', () => {
     component = fixture.componentInstance;
 
     searchEl = fixture.debugElement.query(By.css('#movie-search'));
-    listEl = fixture.debugElement.query(By.css('app-movie-list'));
     pageEl = fixture.debugElement.query(By.css('ngb-pagination'));
 
     store = fixture.debugElement.injector.get(Store);
@@ -140,6 +139,10 @@ describe('MovieBrowserComponent', () => {
   });
 
   it('should trigger onSelectMovie when a movie is selected', () => {
+    component.loaded$ = Observable.of(true); // set loaded$ to display corresponding template
+    fixture.detectChanges();
+    listEl = fixture.debugElement.query(By.css('app-movie-list'));
+
     spyOn(component, 'onSelectMovie');
     listEl.triggerEventHandler('selectMovie', dummyMovie);
     expect(component.onSelectMovie).toHaveBeenCalledWith(dummyMovie);

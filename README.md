@@ -1,30 +1,54 @@
 [![CircleCI](https://circleci.com/gh/Kamforka/movie-viewer.svg?style=shield)](https://circleci.com/gh/Kamforka/movie-viewer)
 
-# MovieBrowser
+# Movie Viewer 1.0
+
+A simple single page app based on Angular 4 to browse popular movies via the TMDb API.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.4.
 
-## Development server
+## Live demo
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Take a look at the live demo at: [DEMO](https://movie-viewer-e727f.firebaseapp.com/browse)
+
+## Features
+
+[Angular CLI](https://github.com/angular/angular-cli)  
+[Bootstrap 4](https://v4-alpha.getbootstrap.com/)  
+[ng-bootstrap](https://ng-bootstrap.github.io/#/home)  
+[ngrx](https://github.com/ngrx/ngrx.github.io)
+
+## Getting started
+
+In order to use the application you need to perform the following: 
+
+    $ git clone https://github.com/kamforka/movie-viewer.git
+    $ cd movie-viewer/
+    $ npm install 
+
+## Running the development server
+
+To set up the application locally you should use the [Angular CLI](https://github.com/angular/angular-cli) command `ng serve` (make sure you are inside the project folder) then in your preferred browser navigate to `http://localhost:4200/`, after the application was compiled you should see it running there.  
+Any change in the source files will trigger an automatic reload of the development server.
 
 ## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+The CLI can also spare you a lot of work by providing automatic code generation.  
+If you are not familiar with it yet go and take a look at the official documentation: [Generating components, directives, pipes and services](https://github.com/angular/angular-cli#generating-components-directives-pipes-and-services).
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Unit tests are provided for the application via [Karma](https://karma-runner.github.io). To run them just execute `ng test`.  
+Both Firefox and Chrome launchers are installed through `npm install`, so just add your favourite to the `browser` option of `karma.conf.js`. (Entries can be: `Chrome`, `Firefox`)
 
-## Running end-to-end tests
+## Building the app
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
+Run `ng build --prod` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+
+## Continous integration and deployment
+
+CircleCI is being used to perform continous unit testing and continous deployment. After a successful test run and an errorfree build the app is deployed to Firebase hosting via [firebase-tools](https://github.com/firebase/firebase-tools).
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+If still in doubt please feel free to contact me at antalszabolcs01@gmail.com.
+

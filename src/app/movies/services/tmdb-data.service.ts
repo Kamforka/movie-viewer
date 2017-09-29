@@ -26,6 +26,13 @@ export class TmdbDataService {
     .map((response: Response) => {
       const data = response.json();
       return this.parseTmdbResponse(data);
+    })
+    .catch((error: any) => {
+      const errorData = error.json();
+
+      console.error(error.status + ' - ' + error.statusText + ' : ' + errorData.status_message);
+
+      return error;
     });
   }
 
